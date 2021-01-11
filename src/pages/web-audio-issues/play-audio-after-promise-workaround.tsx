@@ -4,17 +4,19 @@ const App = () => {
   const [audioError, setAudioError] = useState<Error>();
   const [audio, setAudio] = useState<HTMLAudioElement>();
 
-  const handleLoad = () => {
+  // 1. load the audio in a user interaction
+  const handleLoadClick = () => {
     const _audio = new Audio(
       'https://www.videomaker.com/sites/videomaker.com/files/downloads/free-sound-effects/Free_ExplosionSharp_6048_97_1.wav'
     );
     _audio.load();
     _audio.addEventListener('canplaythrough', () => {
-      console.log('Preloaded audio');
+      console.log('loaded audio');
       setAudio(_audio);
     });
   };
 
+  // 2. now you can play the audio on all subsequent events
   const handleClick = async () => {
     setAudioError(undefined);
     await new Promise((r) => setTimeout(r, 2000));
@@ -32,7 +34,7 @@ const App = () => {
       </p>
       <button
         className="border-2 border-blue-700 bg-blue-500 text-white rounded-md px-4 py-2 text-center"
-        onClick={handleLoad}
+        onClick={handleLoadClick}
         disabled={audio !== undefined}
       >
         {audio ? '▼ Click the button below to play the audio' : 'Load Audio!'}

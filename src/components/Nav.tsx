@@ -19,13 +19,13 @@ const ActiveLink: React.FC<any> = ({ href, children }) => {
 function Nav() {
   return (
     <div className="mt-8 flex flex-col md:flex-row space-y-4 md:space-x-4 md:space-y-0">
-      <ActiveLink href="web-audio-issues/play-audio">
+      <ActiveLink href="/web-audio-issues/play-audio">
         <a>Play audio</a>
       </ActiveLink>
-      <ActiveLink href="web-audio-issues/play-audio-after-promise">
+      <ActiveLink href="/web-audio-issues/play-audio-after-promise">
         <a>Play audio after promise</a>
       </ActiveLink>
-      <ActiveLink href="web-audio-issues/play-audio-after-promise-workaround">
+      <ActiveLink href="/web-audio-issues/play-audio-after-promise-workaround">
         <a>Play audio after promise workaround</a>
       </ActiveLink>
     </div>
